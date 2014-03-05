@@ -1,0 +1,8 @@
+Use a LaTeX compiler to compile a .tex file to a pdf (I recommend Texmaker for
+beginners).
+
+Use the makeindex program (should be bundled with LaTeX) to generate an index
+file for use by LaTeX from the \index{key} tags in the document.
+
+Some features, such as Table of Contents display, may require recompilation to
+display correctly. I usually just recompile it a few times.
