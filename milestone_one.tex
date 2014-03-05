@@ -1,6 +1,10 @@
 \documentclass[11pt]{article}
 \usepackage{makeidx}
 \usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{mdwlist}
+\graphicspath{ {images/} }
 \title{\textbf{MentorWeb\index{MentorWeb} Request Analysis Document (RAD)}}
 \author{Joseph Richardson, Daniel Trebe,\\ Silas McCroskey, Halin Gordon,
 Clifford Chan}
@@ -320,15 +324,348 @@ Clifford Chan}
         \subsubsection{Scenarios}
 
         \subsubsection{Use Case Model}
+            \begin{figure}[H]
+				\centering
+				\includegraphics{UseCase0System}
 
-        % TODO
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: System \\ \hline
+					Actors: User, Mentor, Database, Admin User \\ \hline
+					Entry Condition: User turns on MentorWeb System \\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User brings up MentorWeb in their browser
+						\item User logs in (see Use Case 1)
+					\end{enumerate*} \\ \hline
+					Exit condition: User leaves MentorWeb site \\ \hline
+					Exceptions: Lost internet connection \\ \hline
+				\end{tabular}
+
+				\caption{Use Case Diagram for Use Case 0: System}
+				\label{UC0}
+            \end{figure}
+
+
+            \begin{figure}[H]
+				\centering
+				\includegraphics{UseCase1Login}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Login \\ \hline
+					Actors: User, Database \\ \hline
+					Entry Condition: User has established connection with
+					MentorWeb system\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User attempts to log into MentorWeb
+						\item User either successfully logs in or user
+						credentials do not work
+					\end{enumerate*} \\ \hline
+					Exit condition: User successfully logs in \\ \hline
+					Exceptions: User has no account and must register (see Use
+					Case 2) \\ \hline
+				\end{tabular}
+
+				\caption{Use Case Diagram for Use Case 1: Login}
+				\label{UC1}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase2Register}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Register \\ \hline
+					Actors: User, Database \\ \hline
+					Entry Condition: User is connected to, but does not have an
+					account with, the MentorWeb system\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User enters in a valid email address to which a
+						validation email is sent
+						\item User creates a secure password
+						\item User enters validation code from validation email
+					\end{enumerate*} \\ \hline
+					Exit condition: User has successfully created a new account
+					\\ \hline
+					Exceptions: Account already exists \\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 2: Register}
+            \label{UC2}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase3EditUserProfile}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Edit User Profile \\ \hline
+					Actors: User, Parse Manager, Database \\ \hline
+					Entry Condition: User has logged into MentorWeb system
+					\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User optionally chooses to import information from
+						LinkedIn account to fill user information fields
+						\item User edits information fields manually to insert
+						or correct information
+						\item User submits changes to information
+						\item Information is uploaded to the database
+					\end{enumerate*} \\ \hline
+					Exit condition: Database is updated
+					\\ \hline
+					Exceptions: Edit is cancelled \\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 3: Edit User Profile}
+            \label{UC3}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase4MainMenu}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Main Menu \\ \hline
+					Actors: User, Database \\ \hline
+					Entry Condition: User has logged into MentorWeb system
+					\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User MentorWeb network displayed
+						\item User has options to search for mentors, view their
+						mentor's information, or edit their user profile
+					\end{enumerate*} \\ \hline
+					Exit condition: User navigates to other MentorWeb components
+					\\ \hline
+					Exceptions: none \\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 4: Main Menu}
+            \label{UC4}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase5Search}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Search \\ \hline
+					Actors: User, Database, Mentor \\ \hline
+					Entry Condition: User selects to search for mentors
+					\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User enters search criteria for mentors they want
+						to connect with
+						\item System searches database and displays search
+						results
+						\item User selects which mentors they want to connect
+						with
+						\item Mentor consents to connection with mentee
+					\end{enumerate*} \\ \hline
+					Exit condition: Mentor-mentee connection is established
+					\\ \hline
+					Exceptions: No mentors interesting to the user are found, or
+					connection is denied by mentor \\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 5: Search}
+            \label{UC5}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase6MentoMenteeConnection}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Mentor and Mentee Comunication \\ \hline
+					Actors: User, Database, Communications Manager \\ \hline
+					Entry Condition: User selects to search for mentors
+					\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item User chooses Mentor to view their information
+						\item User selects to contact selected mentor by
+						utilizing Communications Manager
+					\end{enumerate*} \\ \hline
+					Exit condition: Communication occurs
+					\\ \hline
+					Exceptions: Mentor/Mentee unavailable for communication
+					\\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 6: Mentor-Mentee
+			Communication}
+            \label{UC6}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase7UserProfile}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: User Profile
+					\\ \hline
+					Actors: User, Database
+					\\ \hline
+					Entry Condition: User logged in to MentorWeb
+					\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item Database displays information about user
+						\item User optionally selects to edit their profile
+					\end{enumerate*} \\ \hline
+					Exit condition: User leaves or begins editing profile
+					\\ \hline
+					Exceptions: none
+					\\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 7: User Profile}
+            \label{UC7}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{UseCase8MatchingMentorMentee}
+
+				\begin{tabular}{|p{12 cm}|}
+					\hline
+					Name: Matching Mentor with Mentee
+					\\ \hline
+					Actors: Cloud Server Code, Database
+					\\ \hline
+					Entry Condition: User has entered their background
+					information and aspirations
+					\\ \hline
+					Flow of Events:
+					\begin{enumerate*}
+						\item Cloud Server Code parses through user's background
+						and aspiration information for keywords
+						\item Cloud Server Code parses through background
+						information from list of Mentors based on parsed user
+						information
+						\item Cloud Server Code matches user background and
+						aspiration information with Mentor's background
+						information
+						\item Cloud Server Code sends luser list of recommended
+						Mentors
+					\end{enumerate*} \\ \hline
+					Exit condition: Cloud Server Code makes recommendations to
+					user
+					\\ \hline
+					Exceptions: No applicable matches
+					\\ \hline
+				\end{tabular}
+
+            \caption{Use Case Diagram for Use Case 8: Cloud Matching}
+            \label{UC8}
+            \end{figure}
+
         \subsubsection{Object Model}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[angle=90,width=10 cm]{ClassDiagram}
+				\caption{Class Diagram for MentorWeb}
+				\label{ClassD}
+			\end{figure}
 
-        % TODO
         \subsubsection{Dynamic Model}
 
-        % TODO
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase1Login}
+            \caption{Sequence Diagram for Use Case 1: Login}
+            \label{SUC1}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase2Register}
+            \caption{Sequence Diagram for Use Case 2: Register}
+            \label{SUC2}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase3EditUserProfile}
+            \caption{Sequence Diagram for Use Case 3: Edit User Profile}
+            \label{SUC3}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase4MainMenu}
+            \caption{Sequence Diagram for Use Case 4: Main Menu}
+            \label{SUC4}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase5Search}
+            \caption{Sequence Diagram for Use Case 5: Search}
+            \label{SUC5}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase6Communication}
+            \caption{Sequence Diagram for Use Case 6: Communication}
+            \label{SUC6}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase7UserProfile}
+            \caption{Sequence Diagram for Use Case 7: User Profile}
+            \label{SUC7}
+            \end{figure}
+
+            \begin{figure}[H]
+            \centering
+            \includegraphics{SequenceUseCase8CloudMatching}
+            \caption{Sequence Diagram for Use Case 8: Cloud Matching}
+            \label{SUC8}
+            \end{figure}
+
         \subsubsection{User Interface}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[angle=-90,width=12 cm]{PossibleUserInterface}
+				\caption{Mockup of a possible user interface}
+				\label{UIMockup}
+			\end{figure}
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=12 cm]{Activity_Diagram}
+				\caption{Activity Diagram}
+				\label{ActivityD}
+			\end{figure}
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=12 cm]{State_Diagram}
+				\caption{State Diagram}
+				\label{StateD}
+			\end{figure}
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=12 cm]{Nav_mentor_web}
+				\caption{Mentor Web Navigation}
+				\label{NavD}
+			\end{figure}
 
 % TODO
 \section{Glossary}
