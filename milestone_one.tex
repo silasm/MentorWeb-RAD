@@ -9,200 +9,203 @@ Clifford Chan}
 
 \maketitle
 \begin{center}
-	Prepared for SE/CMPE 133: Software Engineering II, San Jose State Spring
-	2014
+    Prepared for SE/CMPE 133: Software Engineering II, San Jose State Spring
+    2014
 \end{center}
 \pagebreak
 
 \tableofcontents
 \setcounter{section}{-1}
 \section{Revision History}
-	\begin{tabular}{c|c|c|p{6 cm}}
-		Revision & Originator  & Date              & Comments         \\ \hline
-		1        & HammerSmash & \date{2014-02-17} & Initial Revision \\ \hline
-		2        & HammerSmash & \date{2014-02-20} & Adding in requirements \\
-		\hline
-		3        & HammerSmash & \date{2014-02-24} & Adding Use Cases \\ \hline
-		4        & HammerSmash & \date{2014-03-02} & Adding Sequence Diagrams,
-		                                             use case models, and
-													 non-fucntional requirements
-												     \\ \hline
-		5        & HammerSmash & \date{2014-03-04} & Moved into LaTeX file, added
-													 % TODO
-	\end{tabular}
+    \begin{tabular}{c|c|c|p{6 cm}}
+        Revision & Originator  & Date              & Comments         \\ \hline
+        1        & HammerSmash & \date{2014-02-17} & Initial Revision \\ \hline
+        2        & HammerSmash & \date{2014-02-20} & Adding in requirements \\
+        \hline
+        3        & HammerSmash & \date{2014-02-24} & Adding Use Cases \\ \hline
+        4        & HammerSmash & \date{2014-03-02} & Adding Sequence Diagrams,
+                                                     use case models, and
+                                                     non-fucntional requirements
+                                                     \\ \hline
+        5        & HammerSmash & \date{2014-03-04} & Moved into LaTeX file, added
+                                                     Definitions, Acronyms, and
+                                                     Abbreviations section
+                                                     % TODO
+    \end{tabular}
 
 \section{Introduction}
 
-	\subsection{Purpose}
-		MentorWeb\index{MentorWeb} is a social media web-based application for
-		working professionals.  MentorWeb\index{MentorWeb} provides a way for
-		working professionals to develop a Mentor\index{Mentor}and
-		Mentee relationship. Any user can be a mentor\index{Mentor}and a
-		mentee\index{Mentee} at anytime. Users can follow mentors based on what
-		the user's goals are matched to the mentor\index{Mentor}s background.
+    \subsection{Purpose}
+        MentorWeb\index{MentorWeb} is a social media web-based application for
+        working professionals.  MentorWeb\index{MentorWeb} provides a way for
+        working professionals to develop a Mentor\index{Mentor}and
+        Mentee relationship. Any user can be a mentor\index{Mentor}and a
+        mentee\index{Mentee} at anytime. Users can follow mentors based on what
+        the user's goals are matched to the mentor\index{Mentor}s background.
 
-	\subsection{Scope}
-		MentorWeb\index{MentorWeb} attempts to establish a stronger network for
-		working professionals.\\
-		\\
-		MentorWeb\index{MentorWeb} will create a mentor\index{Mentor}and
-		mentee\index{Mentee} relationship by allowing users who choose to sign
-		up as a mentee\index{Mentee} to follow mentors\index{Mentor}.\\
-		\\
-		MentorWeb\index{MentorWeb} will suggest certain mentors for each
-		mentee\index{Mentee} by matching the mentee's\index{Mentee} aspirations
-		to the mentor's\index{Mentor} background.\\
-		\\
-		Each mentee\index{Mentee} will be able to communicate to their
-		mentors\index{Mentor} in a variety of ways without requiring additional
-		tools.
+    \subsection{Scope}
+        MentorWeb\index{MentorWeb} attempts to establish a stronger network for
+        working professionals.\\
+        \\
+        MentorWeb\index{MentorWeb} will create a mentor\index{Mentor}and
+        mentee\index{Mentee} relationship by allowing users who choose to sign
+        up as a mentee\index{Mentee} to follow mentors\index{Mentor}.\\
+        \\
+        MentorWeb\index{MentorWeb} will suggest certain mentors for each
+        mentee\index{Mentee} by matching the mentee's\index{Mentee} aspirations
+        to the mentor's\index{Mentor} background.\\
+        \\
+        Each mentee\index{Mentee} will be able to communicate to their
+        mentors\index{Mentor} in a variety of ways without requiring additional
+        tools.
 
-	\subsection{Objectives and Success Criteria}
-		MentorWeb\index{MentorWeb} users will have a stronger professional
-		network and professional foundation.
+    \subsection{Objectives and Success Criteria}
+        MentorWeb\index{MentorWeb} users will have a stronger professional
+        network and professional foundation.
 
-	% TODO
-	\subsection{Definitions, Acronyms, and Abbreviations}
-		\begin{tabular}{cp{10 cm}}
-			Term                 & Definition \\ \hline
-			Mentor\index{Mentor} & A professional with industry experience who
-			                       volunteers to advise a mentee. \\ \hline
-			Mentor\index{Mentee} & A student or worker new to the industry who
-								   seeks advising from a mentor. \\ \hline
-			Sponsor\index{Sponsor}
-			                     & A professional with industry experience who
-			                       not only advises a Mentee, but also is
-								   involved in their career through sponsorship
-								   means, giving opportunities more directly
-								   \\ \hline
-			MentorWeb\index{MentorWeb}
-			                     & A web-based system which aims to facilitate
-			                       the mentor\index{Mentor}-mentee\index{Mentee}
-								   relationships described above. \\ \hline
-			The Program          & Used in this document where not otherwise
-								   obvious: the program MentorWeb. \\ \hline
-			Shall                & When used in a requirement text, signifies
-								   that the program in question is incomplete or
-								   incorrect when not in compliance with this
-								   requirement. \\ \hline
-			Should               & When used in a requirement text, signifies
-								   a desirable property of the target system,
-								   but one without which the system can still be
-								   considered complete and correct. \\ \hline
-			API                  & Application Programming Interface \\ \hline
-		\end{tabular}
+    % TODO
+    \subsection{Definitions, Acronyms, and Abbreviations}
+        \begin{tabular}{cp{10 cm}}
+            Term                 & Definition \\ \hline
+            Mentor\index{Mentor} & A professional with industry experience who
+                                   volunteers to advise a mentee. \\ \hline
+            Mentor\index{Mentee} & A student or worker new to the industry who
+                                   seeks advising from a mentor. \\ \hline
+            Sponsor\index{Sponsor}
+                                 & A professional with industry experience who
+                                   not only advises a Mentee, but also is
+                                   involved in their career through sponsorship
+                                   means, giving opportunities more directly
+                                   \\ \hline
+            MentorWeb\index{MentorWeb}
+                                 & A web-based system which aims to facilitate
+                                   the mentor\index{Mentor}-mentee\index{Mentee}
+                                   relationships described above. \\ \hline
+            The Program          & Used in this document where not otherwise
+                                   obvious: the program MentorWeb. \\ \hline
+            Shall                & When used in a requirement text, signifies
+                                   that the program in question is incomplete or
+                                   incorrect when not in compliance with this
+                                   requirement. \\ \hline
+            Should               & When used in a requirement text, signifies
+                                   a desirable property of the target system,
+                                   but one without which the system can still be
+                                   considered complete and correct. \\ \hline
+            API                  & Application Programming Interface \\ \hline
+        \end{tabular}
 
-	\subsection{References}
-		IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements
-		Specifications
+    \subsection{References}
+        IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements
+        Specifications
 
-	\subsection{Overview}
-		MentorWeb\index{MentorWeb} attempts to allow the user to establish a
-		stronger professional network through facilitating
-		mentor\index{Mentor}-mentee\index{Mentee} relationships.
+    \subsection{Overview}
+        MentorWeb\index{MentorWeb} attempts to allow the user to establish a
+        stronger professional network through facilitating
+        mentor\index{Mentor}-mentee\index{Mentee} relationships.
 
 \section{Current System}
-	MentorWeb\index{MentorWeb} as a system has yet to be implemented; this
-	document covers a new system which does not replace an existing one.
+    MentorWeb\index{MentorWeb} as a system has yet to be implemented; this
+    document covers a new system which does not replace an existing one.
 
 \section{Proposed System}
-	This section describes the requirements and specifications of
-	MentorWeb\index{MentorWeb}.
+    This section describes the requirements and specifications of
+    MentorWeb\index{MentorWeb}.
 
-	\subsection{Overview}
-		MentorWeb\index{MentorWeb} attempts to allow the user to establish a
-		stronger professional network through a
-		mentor\index{Mentor}-mentee\index{Mentee} relationship.
+    \subsection{Overview}
+        MentorWeb\index{MentorWeb} attempts to allow the user to establish a
+        stronger professional network through a
+        mentor\index{Mentor}-mentee\index{Mentee} relationship.
 
-	\subsection{Functional Requirements}
-	\begin{tabular}{|l|p{8 cm}|l|}
-		\hline
-		ID      & Description                             & Priority \\ \hline
-		3.2.0.1 & Users shall be able to decide to keep
-		          their conversations\index{Conversation}
-				  off of server storage                   & EF 1 \\ \hline
-	    3.2.0.2 & MentorWeb shall allow
-				  sponsors\index{Sponsor} with other
-				  companies                               & EF 2 \\ \hline
-		3.2.0.3 & Administrative users shall be able to
-				  suspend users for abusing
-				  MentorWeb\index{MentorWeb}              & EF 3 \\ \hline
-	    3.2.0.4 & In the event the user opts to deactivate
-				  his or her account,
-				  MentorWeb\index{MentorWeb} shall
-				  support this, but shall not delete user
-				  data to provide for the case that the
-				  user opts to re-register                & EF 4 \\ \hline
-	    3.2.0.5 & MentorWeb\index{MentorWeb} shall be a
-				  web-based project, and keep an open API
-				  for expandability                       & EF 5 \\ \hline
-				  3.2.0.6 & MentorWeb\index{MentorWeb}
-				  should be designed to easily migrate to
-				  a mobile application.                   & DF 1 \\ \hline
-		3.2.1.1 & MentorWeb\index{MentorWeb} shall have a
-				  login process and a registration process
-				  for users                               & EF 6 \\ \hline
-		3.2.1.2 & MentorWeb\index{MentorWeb} shall allow
-				  login with the social media outlets
-				  Facebook\index{Facebook} and
-				  LinkedIn\index{LinkedIn}                & EF 7 \\ \hline
-		3.2.2.1 & MentorWeb\index{MentorWeb} users shall
-				  be able to registor as just a
-				  mentor\index{Mentor}, just a
-				  mentee\index{Mentee}, or both           & EF 8 \\ \hline
-		3.2.2.2 & MentorWeb\index{MentorWeb} users shall
-				  be able to input and display their
-				  professional information (background,
-				  aspirations, skills), and/or pull such
-				  information from an existing
-				  LinkedIn\index{LinkedIn} profile       & EF 9 \\ \hline
-	\end{tabular}
+    \subsection{Functional Requirements}
+    \begin{tabular}{|l|p{8 cm}|l|}
+        \hline
+        ID      & Description                             & Priority \\ \hline
+        3.2.0.1 & Users shall be able to decide to keep
+                  their conversations\index{Conversation}
+                  off of server storage                   & EF 1 \\ \hline
+        3.2.0.2 & MentorWeb shall allow
+                  sponsors\index{Sponsor} with other
+                  companies                               & EF 2 \\ \hline
+        3.2.0.3 & Administrative users shall be able to
+                  suspend users for abusing
+                  MentorWeb\index{MentorWeb}              & EF 3 \\ \hline
+        3.2.0.4 & In the event the user opts to deactivate
+                  his or her account,
+                  MentorWeb\index{MentorWeb} shall
+                  support this, but shall not delete user
+                  data to provide for the case that the
+                  user opts to re-register                & EF 4 \\ \hline
+        3.2.0.5 & MentorWeb\index{MentorWeb} shall be a
+                  web-based project, and keep an open API
+                  for expandability                       & EF 5 \\ \hline
+                  3.2.0.6 & MentorWeb\index{MentorWeb}
+                  should be designed to easily migrate to
+                  a mobile application.                   & DF 1 \\ \hline
+        3.2.1.1 & MentorWeb\index{MentorWeb} shall have a
+                  login process and a registration process
+                  for users                               & EF 6 \\ \hline
+        3.2.1.2 & MentorWeb\index{MentorWeb} shall allow
+                  login with the social media outlets
+                  Facebook\index{Facebook} and
+                  LinkedIn\index{LinkedIn}                & EF 7 \\ \hline
+        3.2.2.1 & MentorWeb\index{MentorWeb} users shall
+                  be able to registor as just a
+                  mentor\index{Mentor}, just a
+                  mentee\index{Mentee}, or both           & EF 8 \\ \hline
+        3.2.2.2 & MentorWeb\index{MentorWeb} users shall
+                  be able to input and display their
+                  professional information (background,
+                  aspirations, skills), and/or pull such
+                  information from an existing
+                  LinkedIn\index{LinkedIn} profile       & EF 9 \\ \hline
+        3.2.2.3
+    \end{tabular}
 
 
-	% TODO
-	\subsection{Nonfunctional Requirements}
+    % TODO
+    \subsection{Nonfunctional Requirements}
 
-		% TODO
-		\subsubsection{Usability}
+        % TODO
+        \subsubsection{Usability}
 
-		% TODO
-		\subsubsection{Reliability}
+        % TODO
+        \subsubsection{Reliability}
 
-		% TODO
-		\subsubsection{Performance}
+        % TODO
+        \subsubsection{Performance}
 
-		% TODO
-		\subsubsection{Supportability}
+        % TODO
+        \subsubsection{Supportability}
 
-		% TODO
-		\subsubsection{Implementation}
+        % TODO
+        \subsubsection{Implementation}
 
-		% TODO
-		\subsubsection{Interface}
+        % TODO
+        \subsubsection{Interface}
 
-		% TODO
-		\subsubsection{Packaging}
+        % TODO
+        \subsubsection{Packaging}
 
-		% TODO
-		\subsubsection{Legal}
-	
-	% TODO
-	\subsection{System Models}
+        % TODO
+        \subsubsection{Legal}
+    
+    % TODO
+    \subsection{System Models}
 
-		% TODO
-		\subsubsection{Scenarios}
+        % TODO
+        \subsubsection{Scenarios}
 
-		% TODO
-		\subsubsection{Use Case Model}
+        % TODO
+        \subsubsection{Use Case Model}
 
-		% TODO
-		\subsubsection{Object Model}
+        % TODO
+        \subsubsection{Object Model}
 
-		% TODO
-		\subsubsection{Dynamic Model}
+        % TODO
+        \subsubsection{Dynamic Model}
 
-		% TODO
-		\subsubsection{User Interface}
+        % TODO
+        \subsubsection{User Interface}
 
 % TODO
 \section{Glossary}
@@ -210,21 +213,21 @@ Clifford Chan}
 % TODO
 \section{Appendices}
 
-	% TODO
-	\subsection{Hardware Requirements}
+    % TODO
+    \subsection{Hardware Requirements}
 
-	% TODO
-	\subsection{Project Plan}
+    % TODO
+    \subsection{Project Plan}
 
-	% TODO
-	\subsection{Team Staffing and Responsibilities}
+    % TODO
+    \subsection{Team Staffing and Responsibilities}
 
-	% TODO
-	\subsection{Notebook Log}
+    % TODO
+    \subsection{Notebook Log}
 
-	% TODO
-	\subsection{Index}
-	\printindex
-	
+    % TODO
+    \subsection{Index}
+    \printindex
+    
 
 \end{document}
