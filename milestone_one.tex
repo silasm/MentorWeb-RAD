@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage{makeidx}
+\usepackage{longtable}
 \title{\textbf{MentorWeb\index{MentorWeb} Request Analysis Document (RAD)}}
 \author{Joseph Richardson, Daniel Trebe,\\ Silas McCroskey, Halin Gordon,
 Clifford Chan}
@@ -65,7 +66,8 @@ Clifford Chan}
 
     % TODO
     \subsection{Definitions, Acronyms, and Abbreviations}
-        \begin{tabular}{cp{10 cm}}
+        \begin{center}
+        \begin{longtable}{cp{10 cm}}
             Term                 & Definition \\ \hline
             Mentor\index{Mentor} & A professional with industry experience who
                                    volunteers to advise a mentee. \\ \hline
@@ -92,7 +94,8 @@ Clifford Chan}
                                    but one without which the system can still be
                                    considered complete and correct. \\ \hline
             API                  & Application Programming Interface \\ \hline
-        \end{tabular}
+        \end{longtable}
+        \end{center}
 
     \subsection{References}
         IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements
@@ -117,49 +120,126 @@ Clifford Chan}
         mentor\index{Mentor}-mentee\index{Mentee} relationship.
 
     \subsection{Functional Requirements}
-    \begin{tabular}{|l|p{8 cm}|l|}
+    \begin{center}
+    \begin{longtable}{|l|p{8 cm}|l|}
         \hline
         ID      & Description                             & Priority \\ \hline
         3.2.0.1 & Users shall be able to decide to keep
                   their conversations\index{Conversation}
-                  off of server storage                   & EF 1 \\ \hline
+                  off of server storage                   & EF 1  \\ \hline
         3.2.0.2 & MentorWeb shall allow
                   sponsors\index{Sponsor} with other
-                  companies                               & EF 2 \\ \hline
+                  companies                               & EF 2  \\ \hline
         3.2.0.3 & Administrative users shall be able to
                   suspend users for abusing
-                  MentorWeb\index{MentorWeb}              & EF 3 \\ \hline
+                  MentorWeb\index{MentorWeb}              & EF 3  \\ \hline
         3.2.0.4 & In the event the user opts to deactivate
                   his or her account,
                   MentorWeb\index{MentorWeb} shall
                   support this, but shall not delete user
                   data to provide for the case that the
-                  user opts to re-register                & EF 4 \\ \hline
+                  user opts to re-register                & EF 4  \\ \hline
         3.2.0.5 & MentorWeb\index{MentorWeb} shall be a
                   web-based project, and keep an open API
-                  for expandability                       & EF 5 \\ \hline
+                  for expandability                       & EF 5  \\ \hline
                   3.2.0.6 & MentorWeb\index{MentorWeb}
                   should be designed to easily migrate to
-                  a mobile application.                   & DF 1 \\ \hline
+                  a mobile application.                   & DF 1  \\ \hline
         3.2.1.1 & MentorWeb\index{MentorWeb} shall have a
                   login process and a registration process
-                  for users                               & EF 6 \\ \hline
+                  for users                               & EF 6  \\ \hline
         3.2.1.2 & MentorWeb\index{MentorWeb} shall allow
                   login with the social media outlets
                   Facebook\index{Facebook} and
-                  LinkedIn\index{LinkedIn}                & EF 7 \\ \hline
+                  LinkedIn\index{LinkedIn}                & EF 7  \\ \hline
         3.2.2.1 & MentorWeb\index{MentorWeb} users shall
                   be able to registor as just a
                   mentor\index{Mentor}, just a
-                  mentee\index{Mentee}, or both           & EF 8 \\ \hline
-        3.2.2.2 & MentorWeb\index{MentorWeb} users shall
+                  mentee\index{Mentee}, or both           & EF 8  \\ \hline
+        3.2.3.1 & MentorWeb\index{MentorWeb} users shall
                   be able to input and display their
                   professional information (background,
                   aspirations, skills), and/or pull such
                   information from an existing
-                  LinkedIn\index{LinkedIn} profile       & EF 9 \\ \hline
-        3.2.2.3
-    \end{tabular}
+                  LinkedIn\index{LinkedIn} profile       & EF 9  \\ \hline
+        3.2.3.2 & MentorWeb\index{MentorWeb} shall store
+                  converations\index{Conversation} not
+                  taken offline for one year             & EF 10 \\ \hline
+        3.2.3.3 & Users shall have membership periods for
+                  mentor\index{Mentor}- mentee\index{Mentee}
+                  relationships that can be extended     & EF 11 \\ \hline
+        3.2.3.4 & MentorWeb\index{MentorWeb} users should
+                  be able to block communication from
+                  other registered users                 & DF 2  \\ \hline
+        3.2.3.5 & MentorWeb\index{MentorWeb} users shall
+                  be able to make some of their
+                  information private                    & EF 12 \\ \hline
+        3.2.4.1 & MentorWeb\index{MentorWeb} shall
+                  display information about number of
+                  mentors\index{Mentor} currently online,
+                  total number of registered
+                  mentors\index{Mentor}, how many pairs
+                  of mentor\index{Mentor}-mentee\index{Mentee}
+                  exist, how often
+                  conversations\index{Conversation}
+                  occur, and duration of membership     & DF 3  \\ \hline
+        3.2.4.2 & MentorWeb\index{MentorWeb} should
+                  have a news channel on users' start
+                  page displaying current articles
+                  related to the user's interests       & DF 4  \\ \hline
+        3.2.4.3 & MentorWeb\index{MentorWeb} shall have
+                  a mentor\index{Mentor}
+                  rating\index{Rating} system           & EF 13 \\ \hline
+        3.2.4.4 & MentorWeb\index{MentorWeb} shall
+                  include a comments section for other
+                  mentors\index{Mentor} or
+                  mentees\index{Mentee} to be able to
+                  leave comments\index{Comments} on
+                  their effectiveness, etc.             & EF 14 \\ \hline
+        3.2.4.5 & MentorWeb\index{MentorWeb} shall show
+                  a history of past relationships of
+                  users and their mentors\index{Mentor} & EF 15 \\ \hline
+        3.2.4.6 & MentorWeb\index{MentorWeb}
+                  mentors\index{Mentor} can have several
+                  mentees\index{Mentee} and vice-versa  & EF 16 \\ \hline
+        3.2.5.1 & MentorWeb\index{MentorWeb} shall
+                  allow searching for
+                  mentors\index{Mentors} or
+                  mentees\index{Mentees} from user home
+                  page                                  & EF 17 \\ \hline
+        3.2.5.2 & MentorWeb\index{MentorWeb} shall send
+                  users email notifications when making
+                  requests to be a mentee\index{Mentee}
+                  for any mentor\index{Mentor}          & EF 18 \\ \hline
+        3.2.5.3 & MentorWeb\index{MentorWeb} shall not
+                  force members to be in a
+                  mentor\index{Mentor}-mentee\index{Mentee}
+                  relationship; it is up to the
+                  mentor\index{Mentor} and
+                  mentee\index{Mentee} involved to both
+                  agree on the relationship             & EF 19 \\ \hline
+        3.2.6.1 & MentorWeb\index{MentorWeb} shall run
+                  on target browsers Firefox and
+                  Internet Explorer                     & EF 20 \\ \hline
+        3.2.7.1 & MentorWeb\index{MentorWeb} shall allow
+                  for various online
+                  communication\index{Conversation}
+                  methods, such as appointment systems
+                  (calendars), chat, messaging, and/or
+                  audio/video calls                     & EF 21 \\ \hline
+        3.2.7.2 & MentorWeb\index{MentorWeb} shall have
+                  communication methods embedded into
+                  the website                           & EF 22 \\ \hline
+        3.2.8.1 & MentorWeb\index{MentorWeb} shall match
+                  mentees\index{Mentee} with
+                  mentors\index{Mentor} based on
+                  server-side cloud code matching mentee
+                  \index{Mentee} aspirations with mentor
+                  \index{Mentor} background and/or match
+                  mentee\index{Mentee} background with
+                  mentor\index{Mentor} background       & EF 23 \\ \hline
+    \end{longtable}
+    \end{center}
 
 
     % TODO
